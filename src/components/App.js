@@ -179,6 +179,10 @@ function handleLoggedIn() {
   setIsLoggedIn(true);
 }
 
+function handleLoggedOut() {
+  setIsLoggedIn(false);
+}
+
   return (
     <div className="page">
 
@@ -186,6 +190,7 @@ function handleLoggedIn() {
 
           <Header 
           userData = {userData}
+          handleLoggedOut = {handleLoggedOut}
           />
 
           <Switch>
