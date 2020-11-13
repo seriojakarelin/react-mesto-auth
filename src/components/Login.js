@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import * as Auth from './Auth.js';
-import InfoToolTip from './InfoTooltip.js';
 
 function Login(props) {
 
@@ -23,8 +22,9 @@ function Login(props) {
         Auth.authorize(email, password).then((data) => {
             if (data.token) {
                 props.handleLoggedIn();
-                history.push('/')
-            }
+                history.push('/');
+                props.handleInfoTooltipOpen();
+            } 
         })
     }
 
@@ -40,7 +40,6 @@ function Login(props) {
                     </form>
                 </div>
             </section>
-            <InfoToolTip />
         </>
     )
 }
