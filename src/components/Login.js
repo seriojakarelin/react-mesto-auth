@@ -26,6 +26,9 @@ function Login(props) {
                 props.handleInfoTooltipOpen();
             } 
         })
+        .catch(() => {
+            props.handleInfoTooltipOpen();
+        })
     }
 
     return(
